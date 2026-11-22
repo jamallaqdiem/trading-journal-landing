@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { DownloadsPage } from "./components/DownloadsPage";
 import {
   Activity,
   ArrowUpRight,
@@ -86,6 +87,7 @@ const FEATURES: FeatureItem[] = [
 export function App() {
   const [activeId, setActiveId] = useState<string>(FEATURES[0].id);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [hash, setHash] = useState<string>(() => window.location.hash);
 
   const activeIndex = Math.max(
     0,
@@ -126,6 +128,16 @@ export function App() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [lightboxIndex]);
+
+  useEffect(() => {
+    const onHashChange = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  if (hash === "#/downloads" || hash === "#downloads") {
+    return <DownloadsPage />;
+  }
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#040812] text-slate-100 selection:bg-emerald-400/30 selection:text-emerald-200">
