@@ -6,15 +6,18 @@ import {
   Sparkles,
 } from "lucide-react";
 import { CheckoutTrustSteps } from "./CheckoutTrustSteps";
+import { StripeQrBadge } from "./StripQrBadge";
 
 interface PricingSectionProps {
   checkoutUrl: string;
   priceLabel?: string;
+  qrSrc?: string;
 }
 
 export function PricingSection({
   checkoutUrl,
-  priceLabel = "$49",
+  priceLabel = "$27",
+  qrSrc = "/media/stripeBQ27.png",
 }: PricingSectionProps) {
   return (
     <section id="pricing" className="relative px-4 py-20 sm:px-6">
@@ -56,7 +59,7 @@ export function PricingSection({
                 </li>
                 <li className="flex items-center gap-2.5">
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
-                  <span> direct email support</span>
+                  <span>Direct email support</span>
                 </li>
               </ul>
             </div>
@@ -86,7 +89,11 @@ export function PricingSection({
 
               <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-slate-500">
                 <Lock className="h-3.5 w-3.5 text-emerald-400/80" />
-                <span>Secure Stripe checkout </span>
+                <span>Secure Stripe checkout</span>
+              </div>
+
+              <div className="mt-4 border-t border-slate-800/80 pt-4">
+                <StripeQrBadge qrSrc={qrSrc} priceLabel={priceLabel} />
               </div>
             </div>
           </div>
