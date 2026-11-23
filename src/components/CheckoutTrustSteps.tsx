@@ -41,7 +41,6 @@ export function CheckoutTrustSteps() {
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
           One-time £27 payment (No subscriptions)
         </span>
-        <span>7-Day Money-Back Guarantee</span>
       </div>
     </div>
   );

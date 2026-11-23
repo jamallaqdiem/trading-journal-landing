@@ -7,7 +7,7 @@ export function PrivacyGuarantee() {
         <div className="text-center mb-8">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
             <ShieldCheck className="w-4 h-4" />
-            Zero-Cloud Architecture
+            The App live in your Laptop
           </span>
           <h2 className="text-2xl md:text-3xl font-bold text-white">
             Your Trading Data Never Touches the Internet
