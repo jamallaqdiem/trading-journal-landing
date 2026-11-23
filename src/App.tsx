@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { DownloadsPage } from "./components/DownloadsPage";
+import { PrivacyGuarantee } from "./components/PrivacyGuarantee";
+import { CheckoutTrustSteps } from "./components/CheckoutTrustSteps";
+import { FounderAndSupport } from "./components/FounderAndSupport";
 import { APP_CONFIG } from "./config/links";
 import {
   Activity,
@@ -139,7 +142,6 @@ export function App() {
   if (hash === "#/downloads" || hash === "#downloads") {
     return <DownloadsPage />;
   }
-
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#040812] text-slate-100 selection:bg-emerald-400/30 selection:text-emerald-200">
       {/* Cyber-Grid & Ambient Glow Layer */}
@@ -187,7 +189,7 @@ export function App() {
               href="#workflow"
               className="transition duration-200 hover:text-emerald-300"
             >
-              Edge & Discipline
+              Edge &amp; Discipline
             </a>
             <a
               href="#pricing"
@@ -226,8 +228,8 @@ export function App() {
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
               I learned the hard way repeating mistakes without tracking wins or
               losses is why most traders lose, instead of reviewing what worked
-              and what hurt.Built cleanly from scratch to spot repeating
-              mistakes,.
+              and what hurt. Built cleanly from scratch to spot repeating
+              mistakes.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -304,6 +306,9 @@ export function App() {
           </div>
         </section>
 
+        {/* Point 3: Local-Only Security & Privacy */}
+        <PrivacyGuarantee />
+
         {/* Interactive Feature Tabs + Click-to-Expand Screenshot */}
         <section
           id="screens"
@@ -329,7 +334,7 @@ export function App() {
               </div>
             </div>
 
-            {/*  Tab Selector */}
+            {/* Tab Selector */}
             <div className="mt-8 flex flex-wrap gap-3">
               {FEATURES.map((item) => {
                 const Icon = item.icon;
@@ -407,7 +412,6 @@ export function App() {
                         alt={`${activeFeature.label} view of the trading app`}
                         className="aspect-video w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                       />
-                      {/* Subtle Neon Edge & Hover CTA Overlay */}
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#040812]/80 via-transparent to-emerald-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       <div className="pointer-events-none absolute right-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                         <span className="inline-flex items-center gap-2 rounded-xl border border-emerald-400/60 bg-slate-950/90 px-3.5 py-2 text-xs font-semibold text-emerald-300 shadow-[0_0_25px_rgba(16,185,129,0.4)] backdrop-blur-md">
@@ -562,7 +566,10 @@ export function App() {
           </div>
         </section>
 
-        {/* Conversion / Checkout Ready Section (Next Step: Wire Stripe / Lemon Squeezy) */}
+        {/* Points 6 & 7: Founder Note, Guarantee & Direct Support */}
+        <FounderAndSupport />
+
+        {/* Conversion / Checkout Ready Section */}
         <section id="pricing" className="relative px-4 py-24 sm:px-6">
           <div className="mx-auto max-w-4xl">
             <div className="relative overflow-hidden rounded-3xl border border-emerald-400/35 bg-gradient-to-b from-slate-900/95 via-[#070e1c] to-slate-950 p-8 shadow-[0_0_60px_-15px_rgba(16,185,129,0.35)] sm:p-12">
@@ -581,7 +588,7 @@ export function App() {
                     Ready to Upgrade Your Trading Discipline?
                   </h2>
                   <p className="text-sm leading-relaxed text-slate-400 sm:text-base">
-                    Get instant access to the desktop Trading Analytics &
+                    Get instant access to the desktop Trading Analytics &amp;
                     Journal Suite with full Overview metrics, Trades Feed CSV
                     sync, Market News catalysts, and Daily Psychology tracking.
                   </p>
@@ -596,12 +603,13 @@ export function App() {
                     <li className="flex items-center gap-2.5">
                       <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
                       <span>
-                        CSV import/export, chart snapshots & psychology scoring
+                        CSV import/export, chart snapshots &amp; psychology
+                        scoring
                       </span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
-                      <span>Instant download & license activation key</span>
+                      <span>Instant download &amp; license activation key</span>
                     </li>
                   </ul>
                 </div>
@@ -631,10 +639,13 @@ export function App() {
 
                   <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-slate-500">
                     <Lock className="h-3.5 w-3.5 text-emerald-400/80" />
-                    <span>Encrypted card & Apple/Google Pay checkout</span>
+                    <span>Encrypted card &amp; Apple/Google Pay checkout</span>
                   </div>
                 </div>
               </div>
+
+              {/* Point 4: Checkout Trust Steps */}
+              <CheckoutTrustSteps />
             </div>
           </div>
         </section>
@@ -715,19 +726,10 @@ export function App() {
                 <ChevronRight className="h-5 w-5" />
               </button>
             </div>
-
-            {/* Modal Footer Caption */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-800 bg-slate-900/90 px-5 py-3 text-xs text-slate-400">
-              <span>{lightboxFeature.description}</span>
-              <span className="font-mono text-slate-500">
-                Use ← → keys to switch modules
-              </span>
-            </div>
           </div>
         </div>
       )}
     </div>
   );
 }
-
 export default App;
