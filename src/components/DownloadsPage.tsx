@@ -1,3 +1,4 @@
+import { APP_CONFIG } from "../config/links";
 import {
   ArrowLeft,
   CheckCircle2,
@@ -17,15 +18,14 @@ interface OsInstaller {
   installSteps: string[];
 }
 
-const SUPPORT_EMAIL = "jlaqdiem@gmail.com";
+const SUPPORT_EMAIL = APP_CONFIG.supportEmail;
 
 const INSTALLERS: OsInstaller[] = [
   {
     id: "windows",
     osName: "Windows",
     fileFormat: ".exe Installer",
-    downloadUrl:
-      "https://github.com/jamallaqdiem/trading-journal-desktop/releases/download/V.1.0.0/Trading.Journal.2.0.0.exe",
+    downloadUrl: APP_CONFIG.downloads.windows,
     icon: Monitor,
     installSteps: [
       "Download the .exe file and double-click it from your Downloads folder.",
@@ -37,8 +37,7 @@ const INSTALLERS: OsInstaller[] = [
     id: "macos",
     osName: "macOS",
     fileFormat: ".dmg Disk Image",
-    downloadUrl:
-      "https://github.com/jamallaqdiem/trading-journal-desktop/releases/download/V.1.0.0/Trading.Journal-2.0.0-arm64.dmg",
+    downloadUrl: APP_CONFIG.downloads.mac,
     icon: Laptop,
     installSteps: [
       "Download the .dmg file and double-click it to open the disk image.",
@@ -50,8 +49,7 @@ const INSTALLERS: OsInstaller[] = [
     id: "linux",
     osName: "Linux",
     fileFormat: ".deb Package",
-    downloadUrl:
-      "https://github.com/jamallaqdiem/trading-journal-desktop/releases/download/V.1.0.0/trading-journal-desktop_2.0.0_amd64.deb",
+    downloadUrl: APP_CONFIG.downloads.linux,
     icon: Terminal,
     installSteps: [
       "Download the .deb package to your ~/Downloads folder.",

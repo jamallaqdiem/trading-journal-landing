@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { DownloadsPage } from "./components/DownloadsPage";
+import { APP_CONFIG } from "./config/links";
 import {
   Activity,
   ArrowUpRight,
@@ -35,7 +36,7 @@ interface FeatureItem {
 
 const VIDEO_SLOT_SRC = "/media/video-commercial.mp4";
 
-const CHECKOUT_URL = "#pricing";
+const CHECKOUT_URL = APP_CONFIG.stripePaymentUrl;
 
 const FEATURES: FeatureItem[] = [
   {
