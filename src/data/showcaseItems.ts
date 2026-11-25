@@ -37,7 +37,7 @@ export const FEATURES: FeatureItem[] = [
     description:
       "See daily net P&L, win rate, risk-to-reward discipline, and session status at a glance before placing your next trade.",
     highlight: "Spot overtrading and tilt early",
-    mediaSrc: "/media/img6.jpeg",
+    mediaSrc: "/media/overview-img.jpeg",
     icon: TrendingUp,
   },
   {
@@ -48,7 +48,7 @@ export const FEATURES: FeatureItem[] = [
     description:
       "Break down expectancy, drawdown curves, and setup performance so repeating errors stand out clearly.",
     highlight: "Turn raw trade history into edge",
-    mediaSrc: "/media/img5.jpeg",
+    mediaSrc: "/media/journal.img.jpeg",
     icon: BarChart3,
   },
   {
@@ -59,7 +59,7 @@ export const FEATURES: FeatureItem[] = [
     description:
       "Review entry prices, exits, sizing, and timing side by side to tighten execution consistency and keep chart proof for every trade.",
     highlight: "Saved notes and charts become your winning assets",
-    mediaSrc: "/media/img4.jpeg",
+    mediaSrc: "/media/trades-img.jpeg",
     icon: Activity,
   },
   {
@@ -70,7 +70,7 @@ export const FEATURES: FeatureItem[] = [
     description:
       "Connect session news events directly to your trade notes and emotional tags to build repeatable habits.",
     highlight: "Context + reflection in one place",
-    mediaSrc: "/media/img3.jpeg",
+    mediaSrc: "/media/news-img.jpeg",
     icon: BookOpen,
   },
 ];

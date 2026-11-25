@@ -12,7 +12,7 @@ import { Footer } from "./components/Footer";
 import { LightboxModal, type LightboxItem } from "./components/LightboxModal";
 import { CHART_NOTE_SLIDES, FEATURES } from "./data/showcaseItems";
 
-const VIDEO_SLOT_SRC = "/media/video-commercial.mp4";
+const VIDEO_SLOT_SRC = "/media/video-add-canva.mp4";
 const CHECKOUT_URL = APP_CONFIG.stripePaymentUrl;
 const LICENSE_PRICE = "$27";
 
